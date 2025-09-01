@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wadaag Bank | Own Your Share in Somalia's Future</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], },
+                    colors: {
+                        'brand-dark': '#10172A', 'brand-blue': '#1E40AF', 'brand-accent': '#F59E0B',
+                        'brand-gray': '#64748B', 'brand-light-gray': '#F1F5F9', 'brand-success': '#10B981',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #F1F5F9; color: #10172A; }
+        .cta-button { transition: all 0.3s ease; }
+        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2); }
+        .form-input { transition: all 0.2s ease-in-out; }
+        .form-input:focus { box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.3); border-color: #1E40AF; }
+        .faq-item .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+        .faq-item.open .faq-answer { max-height: 200px; }
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
+        .faq-icon { transition: transform 0.3s ease-out; }
+        .payment-card { transition: all 0.3s ease; border: 1px solid transparent; }
+        .payment-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px -5px rgba(0,0,0,0.1); border-color: #e2e8f0; }
+    </style>
+</head>
+<body class="bg-brand-light-gray">
+
+    <header class="bg-brand-dark/80 backdrop-blur-sm fixed w-full z-50 top-0">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+             <a href="#" class="text-xl font-bold text-white flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-accent mr-2"><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                <span>Wadaag Bank</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="#opportunity" class="text-gray-300 hover:text-white transition">The Opportunity</a>
+                <a href="#payment-channels" class="text-gray-300 hover:text-white transition">Payment Channels</a>
+                <a href="#register" class="text-gray-300 hover:text-white transition">Register Now</a>
+                <a href="#faq" class="text-gray-300 hover:text-white transition">FAQ</a>
+                <a href="#register" class="cta-button bg-brand-accent text-brand-dark font-bold px-5 py-2 rounded-lg ml-4">Become a Shareholder</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden ml-3 text-white">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 bg-brand-dark/95">
+             <a href="#opportunity" class="block py-2 text-gray-300 hover:text-white">The Opportunity</a>
+            <a href="#payment-channels" class="block py-2 text-gray-300 hover:text-white">Payment Channels</a>
+            <a href="#register" class="block py-2 text-gray-300 hover:text-white">Register Now</a>
+            <a href="#faq" class="block py-2 text-gray-300 hover:text-white">FAQ</a>
+            <a href="#register" class="block mt-2 text-center bg-brand-accent text-brand-dark font-bold px-5 py-2 rounded-lg">Become a Shareholder</a>
+        </div>
+    </header>
+
+    <main class="pt-16">
+        <section class="bg-brand-dark text-white pt-16 pb-12">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-black mb-3 leading-tight tracking-tight">Don't Just Bank. Own The Bank.</h1>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">This is your historic opportunity to become a founding owner of Somalia's first truly public bank. Your share is your legacy.</p>
+                <a href="#register" class="cta-button inline-block mt-8 bg-brand-accent text-brand-dark font-bold text-lg px-10 py-4 rounded-lg">Become a Founding Shareholder</a>
+            </div>
+        </section>
+
+        <section id="opportunity" class="py-12 bg-white">
+            <div class="container mx-auto px-6 max-w-4xl text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">This Isn't Just an Investment. It's Ownership.</h2>
+                <div class="text-lg text-brand-gray space-y-4">
+                    <p id="offering-short">This is a historic opportunity to become a founding owner in Somalia's first truly public bank. Your share is more than a financial asset; it’s your personal stake in an institution designed to build national prosperity. Secure your legacy and own a piece of the future.</p>
+                    <div id="offering-long" class="hidden text-left">
+                        <p>Unlike other institutions owned by a select few, Wadaag Bank is being built by the people, for the people. Our public share offering means that ownership—and the power that comes with it—is open to everyone. Your investment directly translates to a voice in our direction and a share in our collective success.</p>
+                        <p class="mt-4">Imagine the pride in knowing that the bank supporting local businesses and fueling job creation is <strong>your</strong> bank. The profits generated don't just go to distant investors; they are reinvested into our communities and returned to you, the shareholder. This is more than a financial return; it's about building a legacy for your family, a tangible asset that grows as our nation grows. Your share is a vote of confidence in a transparent, community-focused future, and your chance to be part of writing the next chapter of our nation's economic success story.</p>
+                    </div>
+                </div>
+                <button id="read-more-btn" class="mt-6 cta-button bg-brand-blue text-white font-semibold px-8 py-3 rounded-lg hover:bg-blue-800 text-sm">Read More</button>
+            </div>
+        </section>
+
+        <section id="payment-channels" class="py-12 bg-brand-light-gray">
+             <div class="container mx-auto px-6">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">Secure Your Share via Our Trusted Partners</h2>
+                    <p class="text-brand-gray mt-2 max-w-2xl mx-auto">Use any of our approved payment channels below for your official investment.</p>
+                </div>
+                <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-7 gap-4">
+                    <div class="payment-card flex flex-col items-center text-center p-4 rounded-lg bg-white">
+                        <i data-lucide="landmark" class="w-10 h-10 mb-3 text-brand-blue"></i>
+                        <h3 class="font-bold text-sm sm:text-base">Dahabshiil Bank</h3>
+                        <p class="text-xs sm:text-sm font-mono text-brand-gray mt-1">BNG HRGD108864</p>
+                    </div>
+                    <div class="payment-card flex flex-col items-center text-center p-4 rounded-lg bg-white">
+                        <i data-lucide="building-2" class="w-10 h-10 mb-3 text-brand-blue"></i>
+                        <h3 class="font-bold text-sm sm:text-base">Darasalaam Bank</h3>
+                        <p class="text-xs sm:text-sm font-mono text-brand-gray mt-1">62020733</p>
+                    </div>
+                    <div class="payment-card flex flex-col items-center text-center p-4 rounded-lg bg-white">
+                        <i data-lucide="landmark" class="w-10 h-10 mb-3 text-brand-blue"></i>
+                        <h3 class="font-bold text-sm sm:text-base">Premier Bank</h3>
+                        <p class="text-xs sm:text-sm font-mono text-brand-gray mt-1">100604732001</p>
+                    </div>
+                    <div class="payment-card flex flex-col items-center text-center p-4 rounded-lg bg-white">
+                        <i data-lucide="building-2" class="w-10 h-10 mb-3 text-brand-blue"></i>
+                        <h3 class="font-bold text-sm sm:text-base">IBS Bank</h3>
+                        <p class="text-xs sm:text-sm font-mono text-brand-gray mt-1">0135149301840012</p>
+                    </div>
+                    <div class="payment-card flex flex-col items-center text-center p-4 rounded-lg bg-white">
+                        <i data-lucide="landmark" class="w-10 h-10 mb-3 text-brand-blue"></i>
+                        <h3 class="font-bold text-sm sm:text-base">Amal Bank</h3>
+                        <p class="text-xs sm:text-sm font-mono text-brand-gray mt-1">1014239149</p>
+                    </div>
+                    <div class="payment-card flex flex-col items-center text-center p-4 rounded-lg bg-white">
+                        <i data-lucide="smartphone" class="w-10 h-10 mb-3 text-brand-blue"></i>
+                        <h3 class="font-bold text-sm sm:text-base">Zaad USD</h3>
+                        <p class="text-xs sm:text-sm font-mono text-brand-gray mt-1">BNG 451840</p>
+                    </div>
+                    <div class="payment-card flex flex-col items-center text-center p-4 rounded-lg bg-white">
+                        <i data-lucide="wallet" class="w-10 h-10 mb-3 text-brand-blue"></i>
+                        <h3 class="font-bold text-sm sm:text-base">eDahab USD</h3>
+                        <p class="text-xs sm:text-sm font-mono text-brand-gray mt-1">707773</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="register" class="py-12 bg-white">
+            <div id="registration-content"></div>
+        </section>
+
+        <section id="faq" class="py-12 bg-brand-light-gray">
+            <div id="faq-content"></div>
+        </section>
+    </main>
+
+    <footer id="footer" class="bg-brand-dark text-white pt-12 pb-8">
+        <div class="container mx-auto px-6 text-center md:text-left">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="md:col-span-1">
+                    <h3 class="text-xl font-bold mb-2">Wadaag Bank</h3>
+                    <p class="text-gray-400">Address: Burj Omaar, Hargeisa, Somalia</p>
+                    <p class="text-gray-400">Phone: +252 637 466 663</p>
+                    <p class="text-gray-400">Email: info@wadaag.com</p>
+                </div>
+                <div class="md:col-span-2 flex justify-center md:justify-end items-center">
+                     <p class="text-gray-500 text-sm">© 2025 Wadaag Bank. A Meisour Powered Initiative. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        const { jsPDF } = window.jspdf;
+        let submittedFormData = {};
+
+        const registrationTemplate = `
+             <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-5 gap-10">
+                    <div class="lg:col-span-2">
+                        <div class="bg-brand-dark text-white p-8 rounded-xl shadow-lg sticky top-24">
+                            <h2 class="text-2xl font-bold">Calculate Your Ownership Stake</h2>
+                            <p class="text-gray-300 mt-2 mb-6 text-sm">Shares are $1,000 each, plus a one-time $100 processing fee per transaction.</p>
+                            <div class="space-y-4">
+                                <div><label for="shares-input" class="font-semibold text-sm mb-1 block">Number of Shares</label><input type="number" id="shares-input" value="1" min="1" class="form-input text-center text-xl font-bold p-3 w-full rounded-lg border-2 border-gray-600 bg-brand-dark"></div>
+                                <div class="bg-brand-blue/30 p-4 rounded-lg flex justify-between items-center">
+                                    <span class="text-gray-300">Total Investment:</span><span id="total-investment" class="text-white text-2xl font-extrabold">$1,100</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-3" id="registration-form-container">
+                        <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+                            <h2 class="text-2xl font-bold text-brand-dark">Claim Your Shares: Secure Registration Form</h2>
+                            <p class="text-brand-gray mt-1 mb-6">Your information is protected by bank-grade security. Fields marked with * are mandatory.</p>
+                            <form id="registration-form" class="space-y-5">
+                                <fieldset><legend class="font-bold text-lg mb-3">Personal Details</legend>
+                                    <div class="grid sm:grid-cols-2 gap-4">
+                                        <div><label for="full-name" class="font-semibold text-sm text-gray-700">Full Name*</label><input type="text" id="full-name" required class="form-input w-full mt-1 p-3 border border-gray-300 rounded-md"></div>
+                                        <div><label for="mother-name" class="font-semibold text-sm text-gray-700">Mother's Full Name*</label><input type="text" id="mother-name" required class="form-input w-full mt-1 p-3 border border-gray-300 rounded-md"></div>
+                                    </div>
+                                    <div class="grid sm:grid-cols-2 gap-4 mt-4">
+                                        <div><label for="mobile" class="font-semibold text-sm text-gray-700">Mobile Number*</label><input type="tel" id="mobile" required class="form-input w-full mt-1 p-3 border border-gray-300 rounded-md"></div>
+                                        <div><label for="email" class="font-semibold text-sm text-gray-700">Email Address*</label><input type="email" id="email" required class="form-input w-full mt-1 p-3 border border-gray-300 rounded-md"></div>
+                                    </div>
+                                    <div class="grid sm:grid-cols-2 gap-4 mt-4">
+                                        <div><label for="city" class="font-semibold text-sm text-gray-700">City*</label><input type="text" id="city" required class="form-input w-full mt-1 p-3 border border-gray-300 rounded-md"></div>
+                                        <div><label for="address" class="font-semibold text-sm text-gray-700">Residential Address*</label><input type="text" id="address" required class="form-input w-full mt-1 p-3 border border-gray-300 rounded-md"></div>
+                                    </div>
+                                    <div class="grid sm:grid-cols-2 gap-4 mt-4">
+                                        <div><label for="gender" class="font-semibold text-sm text-gray-700">Gender*</label><select id="gender" required class="form-input w-full mt-1 p-3 border border-gray-300 rounded-md bg-white"><option value="">Select Gender...</option><option value="male">Male</option><option value="female">Female</option></select></div>
+                                        <div><label for="occupation" class="font-semibold text-sm text-gray-700">Occupation*</label><input type="text" id="occupation" required class="form-input w-full mt-1 p-3 border border-gray-300 rounded-md"></div>
+                                    </div>
+                                </fieldset>
+                                 <fieldset><legend class="font-bold text-lg mb-3 pt-2">Document Uploads</legend>
+                                    <div><label for="your-photo" class="font-semibold text-sm text-gray-700">Your Personal Photo*</label><input type="file" id="your-photo" required class="form-input w-full mt-1 p-2 text-sm border border-gray-300 rounded-md file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-brand-light-gray file:text-brand-blue hover:file:bg-gray-200"><p class="text-xs text-brand-gray mt-1">Please upload a clear, passport-style photo.</p></div>
+                                    <div class="mt-4"><label for="id-scan" class="font-semibold text-sm text-gray-700">ID Card or Passport Scan*</label><input type="file" id="id-scan" required class="form-input w-full mt-1 p-2 text-sm border border-gray-300 rounded-md file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-brand-light-gray file:text-brand-blue hover:file:bg-gray-200"><p class="text-xs text-brand-gray mt-1">Please upload a clear image or PDF.</p></div>
+                                </fieldset>
+                                <fieldset><legend class="font-bold text-lg mb-3 pt-2">Investment & Beneficiary</legend>
+                                    <div class="grid sm:grid-cols-2 gap-4">
+                                        <div><label for="payment-bank" class="font-semibold text-sm text-gray-700">Payment Channel Used*</label><select id="payment-bank" required class="form-input w-full mt-1 p-3 border border-gray-300 rounded-md bg-white"><option value="">Select Channel...</option><option>Dahabshiil Bank</option><option>Darasalaam Bank</option><option>Premier Bank</option><option>IBS Bank</option><option>Amal Bank</option><option>Zaad USD</option><option>eDahab USD</option></select></div>
+                                        <div><label for="tx-ref" class="font-semibold text-sm text-gray-700">Transaction Reference*</label><input type="text" id="tx-ref" required class="form-input w-full mt-1 p-3 border border-gray-300 rounded-md"></div>
+                                    </div>
+                                    <div class="mt-4"><label for="tx-screenshot" class="font-semibold text-sm text-gray-700">Payment Screenshot (Optional)</label><input type="file" id="tx-screenshot" class="form-input w-full mt-1 p-2 text-sm border border-gray-300 rounded-md file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-brand-light-gray file:text-brand-blue hover:file:bg-gray-200"><p class="text-xs text-brand-gray mt-1">Upload a screenshot of your payment confirmation.</p></div>
+                                    <div class="grid sm:grid-cols-2 gap-4 mt-4">
+                                         <div><label for="beneficiary-name" class="font-semibold text-sm text-gray-700">Beneficiary Name (Heir)*</label><input type="text" id="beneficiary-name" required class="form-input w-full mt-1 p-3 border border-gray-300 rounded-md"></div>
+                                         <div><label for="beneficiary-number" class="font-semibold text-sm text-gray-700">Beneficiary Number*</label><input type="tel" id="beneficiary-number" required class="form-input w-full mt-1 p-3 border border-gray-300 rounded-md"></div>
+                                    </div>
+                                </fieldset>
+                                <button type="submit" id="submit-btn" class="cta-button w-full bg-brand-blue text-white font-bold text-lg py-3.5 rounded-lg hover:bg-blue-800 flex justify-center items-center mt-6">
+                                    <span class="btn-text">Secure My Shares</span>
+                                    <span class="btn-loader hidden animate-spin rounded-full h-5 w-5 border-b-2 border-white"></span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-3 hidden" id="success-message">
+                        <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200 text-center h-full flex flex-col justify-center">
+                            <div class="flex justify-center items-center mx-auto w-16 h-16 rounded-full bg-brand-success/20 mb-4"><i data-lucide="party-popper" class="w-10 h-10 text-brand-success"></i></div>
+                            <h2 class="text-2xl font-bold text-brand-dark">Registration Complete!</h2>
+                            <p class="text-brand-gray mt-2 mb-6">Your application has been received. Our team will verify your details and contact you within 3-5 business days with your official share certificate. Thank you for joining Wadaag Bank.</p>
+                            <button id="download-pdf-btn" class="cta-button w-full bg-brand-accent text-brand-dark font-semibold py-3 rounded-lg hover:bg-amber-500 mt-4">Download PDF Receipt</button>
+                            <button id="reset-form-btn" class="cta-button w-full bg-brand-blue text-white font-semibold py-3 rounded-lg hover:bg-blue-800 mt-2">New Registration</button>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+            
+        const faqTemplate = `
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="text-center mb-10"><h2 class="text-3xl md:text-4xl font-bold text-brand-dark">Your Ownership Questions, Answered</h2></div>
+                <div class="space-y-4">
+                    <div class="faq-item bg-white rounded-lg shadow-sm border border-gray-200">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-5 font-semibold">
+                            <span>What is the minimum investment to become an owner?</span>
+                            <i data-lucide="plus" class="faq-icon w-5 h-5 text-brand-blue"></i>
+                        </button>
+                        <div class="faq-answer px-5 pb-5 text-brand-gray"><p>The minimum investment is one share at $1,000, plus a mandatory one-time processing fee of $100 per transaction. The total minimum to become a founding owner is $1,100.</p></div>
+                    </div>
+                    <div class="faq-item bg-white rounded-lg shadow-sm border border-gray-200">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-5 font-semibold">
+                            <span>Is my investment and data secure?</span>
+                            <i data-lucide="plus" class="faq-icon w-5 h-5 text-brand-blue"></i>
+                        </button>
+                        <div class="faq-answer px-5 pb-5 text-brand-gray"><p>Absolutely. We use bank-grade encryption and security protocols to protect all personal and financial data. All payment channels are trusted, verified, and secure.</p></div>
+                    </div>
+                    <div class="faq-item bg-white rounded-lg shadow-sm border border-gray-200">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-5 font-semibold">
+                            <span>When will I receive my official share certificate?</span>
+                            <i data-lucide="plus" class="faq-icon w-5 h-5 text-brand-blue"></i>
+                        </button>
+                        <div class="faq-answer px-5 pb-5 text-brand-gray"><p>After your application and payment are verified, our shareholder relations team will contact you within 3-5 business days with your official, digitally-signed share certificate via email.</p></div>
+                    </div>
+                    <div class="faq-item bg-white rounded-lg shadow-sm border border-gray-200">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-5 font-semibold">
+                            <span>Can members of the diaspora become owners?</span>
+                            <i data-lucide="plus" class="faq-icon w-5 h-5 text-brand-blue"></i>
+                        </button>
+                        <div class="faq-answer px-5 pb-5 text-brand-gray"><p>Yes, we warmly welcome investments from the Somali diaspora around the world. Our online platform and diverse payment channels are designed to make it easy for you to claim your ownership stake from anywhere.</p></div>
+                    </div>
+                </div>
+            </div>`;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('registration-content').innerHTML = registrationTemplate;
+            document.getElementById('faq-content').innerHTML = faqTemplate;
+
+            const generatePDF = (data) => {
+                const doc = new jsPDF();
+                const pageWidth = doc.internal.pageSize.getWidth();
+                let currentY = 0;
+
+                // --- PDF Header ---
+                doc.setFillColor('#10172A'); // brand-dark
+                doc.rect(0, 0, pageWidth, 35, 'F');
+                doc.setTextColor('#FFFFFF');
+                doc.setFont('helvetica', 'bold');
+                doc.setFontSize(20);
+                doc.text('Wadaag Bank', 20, 18);
+                doc.setFontSize(12);
+                doc.setFont('helvetica', 'normal');
+                doc.text('Shareholder Registration Receipt', 20, 26);
+                
+                // --- Helper Functions for PDF content ---
+                const addSection = (title, y) => {
+                    doc.setFontSize(14);
+                    doc.setFont('helvetica', 'bold');
+                    doc.setTextColor('#1E40AF'); // brand-blue
+                    doc.text(title, 20, y);
+                    doc.setDrawColor('#E0E0E0');
+                    doc.line(20, y + 2, pageWidth - 20, y + 2);
+                    return y + 12;
+                };
+
+                const addDetail = (label, value, y) => {
+                    doc.setFontSize(11);
+                    doc.setFont('helvetica', 'bold');
+                    doc.setTextColor('#10172A'); // brand-dark
+                    doc.text(label, 25, y);
+                    doc.setFont('helvetica', 'normal');
+                    doc.setTextColor('#64748B'); // brand-gray
+                    doc.text(String(value || 'N/A'), 90, y);
+                    return y + 8;
+                };
+                
+                // --- PDF Body ---
+                currentY = 45;
+
+                // Shareholder Details
+                currentY = addSection('Shareholder Details', currentY);
+                currentY = addDetail('Full Name:', data.fullName, currentY);
+                currentY = addDetail("Mother's Name:", data.motherName, currentY);
+                currentY = addDetail('Mobile Number:', data.mobile, currentY);
+                currentY = addDetail('Email Address:', data.email, currentY);
+                currentY = addDetail('City:', data.city, currentY);
+                currentY = addDetail('Residential Address:', data.address, currentY);
+                currentY = addDetail('Gender:', data.gender.charAt(0).toUpperCase() + data.gender.slice(1), currentY);
+                currentY = addDetail('Occupation:', data.occupation, currentY);
+                currentY += 5; // Extra space before next section
+
+                // Investment Details
+                currentY = addSection('Investment Details', currentY);
+                currentY = addDetail('Number of Shares:', data.shares, currentY);
+                currentY = addDetail('Total Investment:', data.total, currentY);
+                currentY = addDetail('Payment Channel:', data.paymentBank, currentY);
+                currentY = addDetail('Transaction Ref:', data.txRef, currentY);
+                currentY += 5; // Extra space
+
+                // Beneficiary Details
+                currentY = addSection('Beneficiary (Heir) Details', currentY);
+                currentY = addDetail('Beneficiary Name:', data.beneficiaryName, currentY);
+                currentY = addDetail('Beneficiary Number:', data.beneficiaryNumber, currentY);
+
+                // --- PDF Footer ---
+                const pageHeight = doc.internal.pageSize.getHeight();
+                doc.setDrawColor('#E0E0E0');
+                doc.line(20, pageHeight - 30, pageWidth - 20, pageHeight - 30);
+                doc.setFontSize(9);
+                doc.setTextColor('#64748B');
+                doc.text('This is an official receipt for your share application. Our team will contact you for final verification.', pageWidth / 2, pageHeight - 22, { align: 'center' });
+                doc.text(`Generated on: ${new Date().toLocaleString()}`, pageWidth / 2, pageHeight - 16, { align: 'center' });
+                
+                // Save the PDF
+                doc.save(`Wadaag-Bank-Receipt-${data.fullName.replace(/\s/g, '_')}.pdf`);
+            };
+            
+            // --- EVENT LISTENERS (NO CHANGE FROM ORIGINAL) ---
+            
+            const readMoreBtn = document.getElementById('read-more-btn');
+            if (readMoreBtn) {
+                readMoreBtn.addEventListener('click', () => {
+                    document.getElementById('offering-long').classList.toggle('hidden');
+                    document.getElementById('offering-short').classList.toggle('hidden');
+                    const isExpanded = !document.getElementById('offering-long').classList.contains('hidden');
+                    readMoreBtn.innerText = isExpanded ? 'Show Less' : 'Read More';
+                });
+            }
+            
+            const sharesInput = document.getElementById('shares-input');
+            const totalInvestment = document.getElementById('total-investment');
+            const calculate = () => {
+                if(!sharesInput || !totalInvestment) return;
+                const shares = Math.max(1, parseInt(sharesInput.value) || 1);
+                totalInvestment.textContent = `$${((shares * 1000) + 100).toLocaleString()}`;
+            };
+            if(sharesInput) {
+                sharesInput.addEventListener('input', calculate);
+                sharesInput.addEventListener('blur', () => { if(sharesInput.value < 1) { sharesInput.value = 1; calculate(); }});
+                calculate();
+            }
+
+            const regForm = document.getElementById('registration-form');
+            if (regForm) {
+                regForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const submitBtn = document.getElementById('submit-btn');
+                    submitBtn.querySelector('.btn-text').classList.add('hidden');
+                    submitBtn.querySelector('.btn-loader').classList.remove('hidden');
+                    submitBtn.disabled = true;
+
+                    // *** MODIFIED PART: Capturing all form data ***
+                    submittedFormData = {
+                        fullName: document.getElementById('full-name').value,
+                        motherName: document.getElementById('mother-name').value,
+                        mobile: document.getElementById('mobile').value,
+                        email: document.getElementById('email').value,
+                        city: document.getElementById('city').value,
+                        address: document.getElementById('address').value,
+                        gender: document.getElementById('gender').value,
+                        occupation: document.getElementById('occupation').value,
+                        paymentBank: document.getElementById('payment-bank').value,
+                        beneficiaryName: document.getElementById('beneficiary-name').value,
+                        beneficiaryNumber: document.getElementById('beneficiary-number').value,
+                        shares: document.getElementById('shares-input').value,
+                        total: document.getElementById('total-investment').textContent,
+                        txRef: document.getElementById('tx-ref').value
+                    };
+                    
+                    setTimeout(() => {
+                        document.getElementById('registration-form-container').classList.add('hidden');
+                        document.getElementById('success-message').classList.remove('hidden');
+                        lucide.createIcons();
+                    }, 1500);
+                });
+            }
+            
+            // Use event delegation for dynamically added buttons
+            document.body.addEventListener('click', (event) => {
+                 if (event.target.id === 'reset-form-btn') {
+                    const submitBtn = document.getElementById('submit-btn');
+                    document.getElementById('success-message').classList.add('hidden');
+                    document.getElementById('registration-form-container').classList.remove('hidden');
+                    document.getElementById('registration-form').reset();
+                    calculate();
+                    if(submitBtn){
+                        submitBtn.querySelector('.btn-text').classList.remove('hidden');
+                        submitBtn.querySelector('.btn-loader').classList.add('hidden');
+                        submitBtn.disabled = false;
+                    }
+                 }
+                 
+                 if (event.target.id === 'download-pdf-btn') {
+                     generatePDF(submittedFormData);
+                 }
+            });
+
+            document.querySelectorAll('.faq-question').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const item = btn.parentElement;
+                    const wasOpen = item.classList.contains('open');
+                    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                    if (!wasOpen) item.classList.add('open');
+                });
+            });
+            
+            document.getElementById('mobile-menu-button').addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.toggle('hidden');
+            });
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => document.getElementById('mobile-menu').classList.add('hidden'));
+            });
+
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
